@@ -1,6 +1,6 @@
 {-# OPTIONS --cubical #-}
 
-module primrec where
+module primrec_short where
 
 open import Agda.Primitive using (Level; lzero; lsuc; _⊔_) public
 open import Cubical.Core.Everything public
