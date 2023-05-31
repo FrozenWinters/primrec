@@ -91,29 +91,6 @@ polys : (n m k : ℕ) → IO {a = Agda.Primitive.lzero} ⊤
 polys n zero k = return tt
 polys n (suc m) k = add-coef n k k (∅ ⊹ suc m) (polys n m k)
 
-{-coefs : (n m : ℕ) {k : ℕ} → Vec ℕ k → IO {a = Agda.Primitive.lzero} ⊤ → IO {a = Agda.Primitive.lzero} ⊤
-coefs n m C s = s >> putStr (get-poly C) >> {!!}-}
-
-{-add-num : {n : ℕ} → ℕ → List (Vec ℕ n) → List (Vec ℕ (suc n))
-add-num n σ = map' (λ C → C ⊹ n) σ
-
-add-nums : {n : ℕ} → ℕ → List (Vec ℕ n) → List (Vec ℕ (suc n))
-add-nums n σ = fold _++'_ ∅ (gen (λ k → add-num k σ) n)
-
-add-nums' : {n : ℕ} → ℕ → List (Vec ℕ n) → List (Vec ℕ (suc n))
-add-nums' n σ = fold _++'_ ∅ (gen (λ k → add-num (suc k) σ) n)
-
-coefs : (n m : ℕ) → List (Vec ℕ (suc n)) → IO ⊤ → IO ⊤
-coefs n m -}
-
-{-coefs : (n m : ℕ) → List (Vec ℕ (suc n))
-coefs zero m = add-nums' m (∅ ⊹ ∅)
-coefs (suc n) m = add-nums (suc m) (coefs n m)
-
-polys : (n m : ℕ) → String
-polys n m =
-  fold-string (fold _++'_ ∅ (gen (λ k → map' (λ C → get-poly C) (coefs k m)) n))-}
-
 -----------------
 -- Line to run
 
